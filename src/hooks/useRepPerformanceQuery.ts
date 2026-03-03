@@ -7,7 +7,9 @@ interface PerformanceData {
     goals: RepGoal[];
     alerts: RepAlert[];
     teamAverage: number;
+    trend: any[];
 }
+
 
 export const useRepPerformanceQuery = () => {
     return useQuery<PerformanceData, Error>({

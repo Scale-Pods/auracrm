@@ -14,6 +14,7 @@ export const MOCK_PERFORMANCE_DATA: {
     goals: RepGoal[];
     alerts: RepAlert[];
     teamAverage: number;
+    trend: any[];
 } = {
     reps: [
         {
@@ -172,7 +173,16 @@ export const MOCK_PERFORMANCE_DATA: {
         { id: "a2", userId: "usr_101", alertType: "high_performer", payload: "Jane Doe has closed $42,000 today exceeding her daily goal by 150%.", resolved: false, createdAt: new Date(Date.now() - 7200000).toISOString() },
         { id: "a3", userId: "usr_102", alertType: "zero_activity_3pm", payload: "No outbound calls logged by John Smith since 1:00 PM.", resolved: false, createdAt: new Date(Date.now() - 1800000).toISOString() }
     ],
-    teamAverage: 70
+    teamAverage: 70,
+    trend: [
+        { date: "Mon", "Jane Doe": 85, "John Smith": 70, "Alice Johnston": 65, "Team Avg": 68 },
+        { date: "Tue", "Jane Doe": 88, "John Smith": 75, "Alice Johnston": 60, "Team Avg": 70 },
+        { date: "Wed", "Jane Doe": 82, "John Smith": 72, "Alice Johnston": 68, "Team Avg": 69 },
+        { date: "Thu", "Jane Doe": 90, "John Smith": 68, "Alice Johnston": 70, "Team Avg": 73 },
+        { date: "Fri", "Jane Doe": 95, "John Smith": 80, "Alice Johnston": 75, "Team Avg": 76 },
+        { date: "Sat", "Jane Doe": 92, "John Smith": 75, "Alice Johnston": 65, "Team Avg": 71 },
+        { date: "Sun", "Jane Doe": 96, "John Smith": 72, "Alice Johnston": 68, "Team Avg": 70 },
+    ]
 };
 
 export const MOCK_TREND_DATA = [
