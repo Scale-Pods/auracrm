@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { AlertTriangle, Clock, TrendingDown } from "lucide-react";
+import { AlertTriangle, Clock, TrendingDown, CheckCircle2 } from "lucide-react";
 import { RepAlert } from "@/types/performance";
 import { cn } from "@/lib/utils";
 
