@@ -23,7 +23,7 @@ const navItems = [
     { name: "Contacts", href: "/contacts", icon: Users },
     { name: "Companies", href: "/companies", icon: Building2 },
     { name: "Activities", href: "/activities", icon: Activity },
-    { name: "AI Insights", href: "/ai-insights", icon: Sparkles }, // ✅ fixed
+    { name: "AI Insights", href: "/insights", icon: Sparkles }, // ✅ fixed
     { name: "Reports", href: "/reports", icon: BarChart },
 ];
 
