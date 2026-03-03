@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 "use client";
 
 import { motion } from "framer-motion";
@@ -5,9 +7,9 @@ import { useRepPerformanceQuery } from "@/hooks/useRepPerformanceQuery";
 import { KPISection } from "@/components/performance/KPISection";
 import { LeaderboardTable } from "@/components/performance/LeaderboardTable";
 import { GoalProgress } from "@/components/performance/GoalProgress";
-import dynamic from "next/dynamic";
+import dynamicImport from "next/dynamic";
 
-const TrendChart = dynamic(
+const TrendChart = dynamicImport(
     () => import("@/components/performance/TrendChart").then(mod => mod.TrendChart),
     { ssr: false }
 );
