@@ -5,7 +5,12 @@ import { useRepPerformanceQuery } from "@/hooks/useRepPerformanceQuery";
 import { KPISection } from "@/components/performance/KPISection";
 import { LeaderboardTable } from "@/components/performance/LeaderboardTable";
 import { GoalProgress } from "@/components/performance/GoalProgress";
-import { TrendChart } from "@/components/performance/TrendChart";
+import dynamic from "next/dynamic";
+
+const TrendChart = dynamic(
+    () => import("@/components/performance/TrendChart").then(mod => mod.TrendChart),
+    { ssr: false }
+);
 import { AlertsPanel } from "@/components/performance/AlertsPanel";
 import { Loader2 } from "lucide-react";
 
