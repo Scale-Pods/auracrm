@@ -1,27 +1,36 @@
-import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { Shell } from "@/components/layout/Shell";
+import { Inter } from "next/font/google";
+import { Sidebar } from "@/components/layout/Sidebar";
+import { Topbar } from "@/components/layout/Topbar";
 import ReactQueryProvider from "@/components/providers/ReactQueryProvider";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
-const jetBrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains", display: "swap" });
+const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "AuraCRM | AI-Powered Sales Workspace",
-  description: "Premium futuristic SaaS CRM with AI insights and predictive pipeline management.",
+export const metadata = {
+  title: "AuraCRM",
+  description: "AI-powered Sales CRM",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetBrainsMono.variable}`}>
-      <body className="font-sans bg-bg-base text-text-primary antialiased h-screen w-screen overflow-hidden selection:bg-brand/30 selection:text-brand">
+    <html lang="en">
+      <body className={inter.className}>
         <ReactQueryProvider>
-          {children}
+          <div className="flex h-screen bg-bg-primary text-text-primary">
+            <Sidebar />
+
+            <div className="flex-1 flex flex-col overflow-hidden">
+              <Topbar />
+
+              <main className="flex-1 overflow-y-auto p-6">
+                {children}
+              </main>
+            </div>
+          </div>
         </ReactQueryProvider>
       </body>
     </html>
