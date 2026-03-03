@@ -12,7 +12,8 @@ import {
     Sparkles,
     BarChart,
     Settings,
-    ChevronLeft
+    ChevronLeft,
+    TrendingUp
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -20,6 +21,7 @@ import { usePathname } from "next/navigation";
 const navItems = [
     { name: "Dashboard", href: "/", icon: LayoutDashboard },
     { name: "Pipeline", href: "/pipeline", icon: KanbanSquare },
+    { name: "Performance", href: "/performance", icon: TrendingUp },
     { name: "Contacts", href: "/contacts", icon: Users },
     { name: "Companies", href: "/companies", icon: Building2 },
     { name: "Activities", href: "/activities", icon: Activity },
